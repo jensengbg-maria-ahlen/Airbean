@@ -1,0 +1,83 @@
+// FONTS ---------------
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+
+h2 {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 42px;
+}
+
+h3 {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 22px;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 23px;
+}
+
+h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+// BACKGROUND 
+
+body {
+
+    #app {
+        max-width: 1000vw;
+        min-height: 800px;
+        display: flex;
+        color: #2F2926;
+
+        #home {
+            background-color: #0E927D;
+            background-image: url('./assets/header-left.svg'), url('./assets/header-right.svg');
+            background-position: left center, right center;
+            background-repeat: no-repeat;
+            background-size: 50%, 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5rem;
+            color: #FFFFFF;
+        }
+
+        #about , #coffeeMenu {
+            background-color: #F3E4E1;
+            background-image: url('./assets/header-top.svg'), url('./assets/header-bottom.svg');
+            background-position: top center, bottom center;
+            background-repeat: no-repeat;
+            background-size: 100%, 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5rem;
+        }
+    }
+}
+
+
