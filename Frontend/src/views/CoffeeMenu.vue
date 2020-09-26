@@ -8,11 +8,7 @@
         alt="navIcon"
       />
       <aside class="orderCart">
-        <img 
-        @click="showCart"
-        src="./../assets/bag.png" 
-        alt="bag" 
-      />
+        <img @click="showCart" src="./../assets/bag.png" alt="bag" />
       </aside>
     </section>
     <h2>Meny</h2>
@@ -37,7 +33,7 @@ export default {
   },
   methods: {
     showMenu() {},
-    showCart() {}
+    showCart() {},
   },
   computed: {
     menu() {
@@ -84,7 +80,5 @@ export default {
       width: 90%;
     }
   }
-
-  
 }
 </style>

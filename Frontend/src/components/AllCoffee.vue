@@ -1,5 +1,5 @@
 <template>
-  <article class="allCoffee">
+  <article class="allCoffee" @click="addItemToCart">
     <img src="./../assets/add.png" alt="add" class="add" />
     <section class="items">
       <div class="coffee">
@@ -20,6 +20,11 @@ export default {
   props: {
     menuItem: Object,
   },
+  methods: {
+    addItemToCart() {
+      this.$store.commit('addItemToCart', this.menuItem)
+    }
+  }
 };
 </script>
 
@@ -28,7 +33,7 @@ export default {
   display: flex;
   flex-direction: row;
   height: 2%;
-  
+
   .add {
     margin: 0;
     padding: 0;
@@ -40,7 +45,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-  
+
     .coffee {
       display: flex;
       flex-direction: row;
@@ -53,7 +58,7 @@ export default {
         &.item-dots {
           flex: 1;
           border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-          margin-bottom: .3rem;
+          margin-bottom: 0.3rem;
         }
       }
     }

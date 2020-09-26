@@ -6,14 +6,13 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   beforeMount() {
-    this.$store.dispatch('fetchMenu');
-  }
-}
+    this.$store.dispatch("fetchMenu");
+  },
+};
 </script>
 
 <style lang="scss">
-@import './scss/main'
-
+@import "./scss/main";
 </style>

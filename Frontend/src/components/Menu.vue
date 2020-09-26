@@ -1,6 +1,6 @@
 <template>
   <article id="menu">
-    <img src="./../assets/close.png" alt="">
+    <img src="./../assets/close.png" alt="" />
     <a href="#">Meny</a>
     <a href="#">Vårt Kaffe</a>
     <a href="#">Min Profil</a>
@@ -10,14 +10,12 @@
 
 <script>
 export default {
-    name: 'Menu'
-}
+  name: "Menu",
+};
 </script>
 
 <style lang="scss">
-
 #menu {
-  background: #2F2926;
+  background: #2f2926;
 }
-
 </style>
