@@ -8,7 +8,11 @@
         alt="navIcon"
       />
       <aside class="orderCart">
-        <img @click="showCart" src="./../assets/bag.png" alt="bag" />
+        <img 
+          @click="showCart" 
+          src="./../assets/bag.png" 
+          alt="bag" 
+        />
       </aside>
     </section>
     <h2>Meny</h2>

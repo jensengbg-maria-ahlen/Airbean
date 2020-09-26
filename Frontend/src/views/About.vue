@@ -56,18 +56,18 @@ export default {
     display: flex;
     align-self: flex-start;
     justify-content: flex-start;
-    margin-top: -0.5rem;
+    margin-top: -1rem;
   }
 
   h2 {
     display: flex;
     align-self: flex-start;
     justify-content: flex-start;
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
   }
 
   #aboutText {
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
 
     #bold {
       font-weight: bolder;

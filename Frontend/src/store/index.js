@@ -9,7 +9,7 @@ export default new Vuex.Store({
     apiUrl: 'http://localhost:3000',
     menu: Array,
     cart: [],
-    item: Object
+    order: Object
   },
   mutations: {
     showProducts(state, data) {
@@ -19,7 +19,7 @@ export default new Vuex.Store({
       state.cart.push(item)
     },
     orderConfirmed(state, item) {
-      state.item = item.data
+      state.order = item.data
     }
   },
   actions: {
