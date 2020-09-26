@@ -40,6 +40,7 @@ export default {
     display: flex;
     align-self: flex-start;
     justify-content: flex-start;
+    padding: 1rem;
   }
 
   #aboutText {
@@ -52,7 +53,7 @@ export default {
   }
 
   .founder {
-    padding: 1rem;
+    margin-bottom: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
