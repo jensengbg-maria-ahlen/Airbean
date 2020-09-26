@@ -1,0 +1,43 @@
+/* LAYOUT STYLE */
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    #app {
+        max-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        color: #2F2926;
+
+        #home {
+            width: 100%;
+            background-color: #0E927D;
+            background-image: url('./assets/header-left.svg'), url('./assets/header-right.svg');
+            background-position: left center, right center;
+            background-repeat: no-repeat;
+            background-size: 50%, 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #FFFFFF;
+            padding: 1rem;
+        }
+
+        #about , #coffeeMenu {
+            width: 100%;
+            background-color: #F3E4E1;
+            background-image: url('./assets/header-top.svg'), url('./assets/header-bottom.svg');
+            background-position: top center, bottom center;
+            background-repeat: no-repeat;
+            background-size: 100%, 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+        }
+    }
+}

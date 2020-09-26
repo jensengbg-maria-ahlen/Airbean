@@ -1,7 +1,8 @@
 <template>
   <main id="home" @click="goToMenu">
-    <img src="./../assets/Ellipse 12.png" alt="Logo">
-    <img src="./../assets/Vector.png" alt="Logo" class="logo">
+    <aside class="logo">
+      <img src="./../assets/Vector.png" alt="Logo">
+    </aside>
     <h1>AIR BEAN</h1>
     <p>DRONEDELIVERED COFFEE</p>
   </main>
@@ -24,8 +25,13 @@ export default {
   
   #home {
     .logo {
-      position: absolute;
-      top: 33%;
+      width: 4rem;
+      height: 4rem;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999rem;
     }
 
     h1 {
