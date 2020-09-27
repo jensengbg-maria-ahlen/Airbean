@@ -7,15 +7,15 @@
         src="./../assets/navicon.png"
         alt="navIcon"
       />
-      <Menu v-if="showMenu" />
       <aside class="orderCart" @click="toggleCart">
         <img src="./../assets/bag.png" alt="bag" />
         <aside class="cartItems">
           <p>{{ cart.length }}</p>
         </aside>
-        <Cart :coffeeItem="cart" v-if="showCart"/>
       </aside>
     </section>
+    <Menu v-if="showMenu" />
+    <Cart :coffeeItem="cart" v-if="showCart"/>
     <h2>Meny</h2>
     <section class="coffeeSection">
       <AllCoffe

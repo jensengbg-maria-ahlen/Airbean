@@ -55,10 +55,11 @@ export default {
 
 <style lang="scss">
 #cart {
-    position: fixed;
+    position: absolute;
     z-index: 1;
     background: #FFFFFF;
     width: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
