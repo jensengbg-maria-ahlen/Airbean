@@ -6,7 +6,6 @@
       src="./../assets/navicon.png"
       alt="navIcon"
     />
-    <Menu v-if="showMenu" />
     <h2>Vårt kaffe</h2>
     <article id="aboutText">
       <p id="bold">
@@ -43,22 +42,12 @@
 </template>
 
 <script>
-import Menu from "@/components/Menu";
-
 export default {
   name: "About",
-  components: {
-    Menu
-  },
   methods: {
     toggleMenu() {
       this.$store.commit('toggleMenu')
     }
-  },
-  computed: {
-    showMenu() {
-      return this.$store.state.show.showMenu
-    },
   }
 };
 </script>

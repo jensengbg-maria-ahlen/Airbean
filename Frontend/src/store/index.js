@@ -65,9 +65,6 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    menu: state => {
-      return state.menu
-    },
     totalCost(state) {
       let items = state.cart.map(item => {
         return item.quantity * item.price

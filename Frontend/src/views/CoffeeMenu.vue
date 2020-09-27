@@ -14,8 +14,6 @@
         </aside>
       </aside>
     </section>
-    <Menu v-if="showMenu" />
-    <Cart :coffeeItem="cart" v-if="showCart"/>
     <h2>Meny</h2>
     <section class="coffeeSection">
       <AllCoffe
@@ -30,15 +28,11 @@
 
 <script>
 import AllCoffe from "@/components/AllCoffee";
-import Cart from "@/components/Cart";
-import Menu from "@/components/Menu";
 
 export default {
   name: "CoffeeMenu",
   components: {
     AllCoffe,
-    Cart,
-    Menu
   },
   methods: {
     toggleMenu() {
@@ -50,16 +44,10 @@ export default {
   },
   computed: {
     menu() {
-      return this.$store.getters.menu;
-    },
-    showMenu() {
-      return this.$store.state.show.showMenu
+      return this.$store.state.menu;
     },
     cart() {
       return this.$store.state.cart;
-    },
-    showCart() {
-      return this.$store.state.show.showCart
     }
   },
 };
