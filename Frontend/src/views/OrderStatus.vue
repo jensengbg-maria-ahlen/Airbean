@@ -15,7 +15,11 @@ export default {
     order() {
       return this.$store.state.order
     },
-    randomMinutes: {}
+    randomMinutes(min, max) {
+      min = 5;
+      max = 20;
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
   },
   methods: {
     returnToMenu() {

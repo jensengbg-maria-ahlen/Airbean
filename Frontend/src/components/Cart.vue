@@ -43,8 +43,12 @@ export default {
   },
   methods: {
     buyItems() {
-      this.$store.dispatch("orderItems");
-      this.$router.push("/status");
+      if (this.coffeeItem.length == 0) {
+        alert('Din varukorg är tom!');
+      } else {
+        this.$store.dispatch("orderItems");
+        this.$router.push("/status");
+      }
     },
     addItemToCart() {
       this.$store.commit("addItemToCart", this.$vnode.key);
@@ -63,14 +67,16 @@ export default {
 
 <style lang="scss">
 #cart {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   background: #ffffff;
   width: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-left: 1rem;
+  margin-top: 5rem;
 
   article {
     display: flex;
