@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ax from 'axios'
+//import router from './../router'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,11 @@ export default new Vuex.Store({
     apiUrl: 'http://localhost:3000',
     menu: Array,
     cart: [],
-    order: Object
+    order: Object,
+    ui: {
+      showCart: false,
+      showMenu: false
+    }
   },
   mutations: {
     showProducts(state, data) {
@@ -20,6 +25,17 @@ export default new Vuex.Store({
     },
     orderConfirmed(state, item) {
       state.order = item.data
+    },
+    toggleMenu(state) {
+      state.ui.showMenu = !state.ui.showMenu
+    },
+    toggleCart(state) {
+      state.ui.showCart = !state.ui.showCart
+    },
+    removeItemFromCart(state, itemIndex) {
+      state.cart.splice(itemIndex, 1)
+    },
+    buyItems() {
     }
   },
   actions: {
@@ -32,6 +48,7 @@ export default new Vuex.Store({
         items: ctx.state.cart
       });
       ctx.commit('orderConfirmed', data);
+      ctx.commit('toggleCart')
     }
   },
   getters: {

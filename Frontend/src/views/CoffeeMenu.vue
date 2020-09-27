@@ -2,25 +2,23 @@
   <main id="coffeeMenu">
     <section class="navButtons">
       <img
-        @click="showMenu"
+        @click="toggleMenu"
         class="navIcon"
         src="./../assets/navicon.png"
         alt="navIcon"
       />
-      <aside class="orderCart">
-        <img 
-          @click="showCart" 
-          src="./../assets/bag.png" 
-          alt="bag" 
-        />
-        <aside class="quantity">
-          <p>{{cart.length}}</p>
+      <Menu v-if="showMenu" />
+      <aside class="orderCart" @click="toggleCart">
+        <img src="./../assets/bag.png" alt="bag" />
+        <aside class="cartItems">
+          <p>{{ cart.length }}</p>
         </aside>
+        <Cart :coffeeItem="cart" v-if="showCart"/>
       </aside>
     </section>
     <h2>Meny</h2>
     <section class="coffeeSection">
-      <Menu
+      <AllCoffe
         v-for="item in menu"
         :key="item.id"
         :menuItem="item"
@@ -31,23 +29,37 @@
 </template>
 
 <script>
-import Menu from "@/components/AllCoffee";
+import AllCoffe from "@/components/AllCoffee";
+import Cart from "@/components/Cart";
+import Menu from "@/components/Menu";
 
 export default {
   name: "CoffeeMenu",
   components: {
-    Menu,
+    AllCoffe,
+    Cart,
+    Menu
   },
   methods: {
-    showMenu() {},
-    showCart() {},
+    toggleMenu() {
+      this.$store.commit('toggleMenu')
+    },
+    toggleCart() {
+      this.$store.commit('toggleCart')
+    },
   },
   computed: {
     menu() {
       return this.$store.getters.menu;
     },
+    showMenu() {
+      return this.$store.state.ui.showMenu
+    },
     cart() {
       return this.$store.state.cart;
+    },
+    showCart() {
+      return this.$store.state.ui.showCart
     }
   },
 };
@@ -76,16 +88,16 @@ export default {
       align-items: center;
       border-radius: 999rem;
 
-      .quantity {
+      .cartItems {
         position: absolute;
         width: 1.5rem;
         height: 1.5rem;
-        background: #E5674E;
+        background: #e5674e;
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 999rem;
-        color: #FFFFFF;
+        color: #ffffff;
         margin-top: -3rem;
         margin-right: -2rem;
       }

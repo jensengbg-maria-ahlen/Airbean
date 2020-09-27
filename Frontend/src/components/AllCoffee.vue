@@ -1,5 +1,5 @@
 <template>
-  <article class="allCoffee" @click="addItemToCart">
+  <article class="allCoffee" @click.prevent="addItemToCart">
     <img src="./../assets/add.png" alt="add" class="add" />
     <section class="items">
       <div class="coffee">
