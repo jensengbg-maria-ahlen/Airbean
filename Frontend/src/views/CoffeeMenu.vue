@@ -13,6 +13,9 @@
           src="./../assets/bag.png" 
           alt="bag" 
         />
+        <aside class="quantity">
+          <p>{{cart.length}}</p>
+        </aside>
       </aside>
     </section>
     <h2>Meny</h2>
@@ -43,6 +46,9 @@ export default {
     menu() {
       return this.$store.getters.menu;
     },
+    cart() {
+      return this.$store.state.cart;
+    }
   },
 };
 </script>
@@ -69,6 +75,20 @@ export default {
       justify-content: center;
       align-items: center;
       border-radius: 999rem;
+
+      .quantity {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: #E5674E;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 999rem;
+        color: #FFFFFF;
+        margin-top: -3rem;
+        margin-right: -2rem;
+      }
     }
   }
 
