@@ -10,7 +10,7 @@
       <aside class="orderCart" @click="toggleCart">
         <img src="./../assets/bag.png" alt="bag" />
         <aside class="cartItems">
-          <p>{{ cart.length }}</p>
+          <p>{{ cart }}</p>
         </aside>
       </aside>
     </section>
@@ -47,7 +47,7 @@ export default {
       return this.$store.state.menu;
     },
     cart() {
-      return this.$store.state.cart;
+      return this.$store.getters.totalQuantity
     }
   },
 };

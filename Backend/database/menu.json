@@ -51,6 +51,83 @@
         }
       ],
       "totalOrderValue": 117
+    },
+    {
+      "orderNr": "VWk1NB-CE",
+      "timeStamp": 1601216313851,
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 2
+        }
+      ],
+      "totalOrderValue": 78
+    },
+    {
+      "orderNr": "GUo2LrI2F",
+      "timeStamp": 1601216395296,
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
+    },
+    {
+      "orderNr": "FUgL2rPKz",
+      "timeStamp": 1601216453401,
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 2
+        }
+      ],
+      "totalOrderValue": 78
+    },
+    {
+      "orderNr": "XUzDHr4M4",
+      "timeStamp": 1601216522950,
+      "items": [
+        {
+          "id": 2,
+          "title": "Caffè Doppio",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 49,
+          "quantity": 2
+        },
+        {
+          "id": 3,
+          "title": "Cappuccino",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 49,
+          "quantity": 1
+        }
+      ],
+      "totalOrderValue": 147
+    },
+    {
+      "orderNr": "2vUP_tnCF",
+      "timeStamp": 1601216582372,
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
     }
   ]
 }
