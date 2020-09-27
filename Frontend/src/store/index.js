@@ -11,7 +11,7 @@ export default new Vuex.Store({
     menu: Array,
     cart: [],
     order: Object,
-    ui: {
+    show: {
       showCart: false,
       showMenu: false
     }
@@ -27,10 +27,10 @@ export default new Vuex.Store({
       state.order = item.data
     },
     toggleMenu(state) {
-      state.ui.showMenu = !state.ui.showMenu
+      state.show.showMenu = !state.show.showMenu
     },
     toggleCart(state) {
-      state.ui.showCart = !state.ui.showCart
+      state.show.showCart = !state.show.showCart
     },
     removeItemFromCart(state, itemIndex) {
       state.cart.splice(itemIndex, 1)

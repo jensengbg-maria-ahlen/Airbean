@@ -1,11 +1,12 @@
 <template>
   <main id="about">
     <img
-      @click="showMenu"
+      @click="toggleMenu"
       class="navIcon"
       src="./../assets/navicon.png"
       alt="navIcon"
     />
+    <Menu v-if="showMenu" />
     <h2>Vårt kaffe</h2>
     <article id="aboutText">
       <p id="bold">
@@ -42,11 +43,23 @@
 </template>
 
 <script>
+import Menu from "@/components/Menu";
+
 export default {
   name: "About",
-  methods: {
-    showMenu() {},
+  components: {
+    Menu
   },
+  methods: {
+    toggleMenu() {
+      this.$store.commit('toggleMenu')
+    }
+  },
+  computed: {
+    showMenu() {
+      return this.$store.state.show.showMenu
+    },
+  }
 };
 </script>
 
@@ -56,7 +69,6 @@ export default {
     display: flex;
     align-self: flex-start;
     justify-content: flex-start;
-    margin-top: -1rem;
   }
 
   h2 {
@@ -64,6 +76,7 @@ export default {
     align-self: flex-start;
     justify-content: flex-start;
     padding: 0 1rem 0 1rem;
+    margin-top: 5rem;
   }
 
   #aboutText {
@@ -76,7 +89,7 @@ export default {
   }
 
   .founder {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;

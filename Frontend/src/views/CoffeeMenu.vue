@@ -53,13 +53,13 @@ export default {
       return this.$store.getters.menu;
     },
     showMenu() {
-      return this.$store.state.ui.showMenu
+      return this.$store.state.show.showMenu
     },
     cart() {
       return this.$store.state.cart;
     },
     showCart() {
-      return this.$store.state.ui.showCart
+      return this.$store.state.show.showCart
     }
   },
 };
@@ -71,7 +71,6 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: -1rem;
 
     .navIcon {
       display: flex;
@@ -104,12 +103,16 @@ export default {
     }
   }
 
+  h2 {
+    margin-top: 5rem;
+  }
+
   .coffeeSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 10rem;
+    margin: 2rem 0 10rem 0;
 
     .menuItems {
       display: flex;
