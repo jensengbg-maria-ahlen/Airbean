@@ -20,40 +20,61 @@ export default new Vuex.Store({
     showProducts(state, data) {
       state.menu = data
     },
-    addItemToCart(state, item) {
-      state.cart.push(item)
+
+    addItemToCart(state, product) {
+      let cartItem = state.cart.find(item => item.id == product.id);
+
+      if (cartItem) {
+        cartItem.quantity++
+        this.totalCost = (cartItem.quantity * cartItem.price)
+      } else {
+        state.cart.push(product);
+        Vue.set(product, 'quantity', 1)
+      }
     },
     orderConfirmed(state, item) {
       state.order = item.data
     },
+
+    removeItemFromCart(state, itemIndex) {
+      state.cart.splice(itemIndex, 1)
+    },
+    emptyTheCart(state) {
+      state.cart = []
+    },
+
     toggleMenu(state) {
       state.show.showMenu = !state.show.showMenu
     },
     toggleCart(state) {
       state.show.showCart = !state.show.showCart
-    },
-    removeItemFromCart(state, itemIndex) {
-      state.cart.splice(itemIndex, 1)
-    },
-    buyItems() {
     }
   },
   actions: {
     async fetchMenu(ctx) {
-        let data = await ax.get(`${ctx.state.apiUrl}/menu`);
-        ctx.commit('showProducts', data.data.menu);
+      let data = await ax.get(`${ctx.state.apiUrl}/menu`);
+      ctx.commit('showProducts', data.data.menu);
     },
     async orderItems(ctx) {
       let data = await ax.post(`${ctx.state.apiUrl}/order`, {
         items: ctx.state.cart
       });
-      ctx.commit('orderConfirmed', data);
+      ctx.commit('orderConfirmed', data)
+      ctx.commit('emptyTheCart')
       ctx.commit('toggleCart')
     }
   },
   getters: {
     menu: state => {
       return state.menu
+    },
+    totalCost(state) {
+      let items = state.cart.map(item => {
+        return item.quantity * item.price
+      })
+      return items.reduce(function (price, product) {
+        return price + product;
+      }, 0)
     }
   }
 })

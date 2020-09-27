@@ -2,24 +2,32 @@
   <aside id="cart">
     <h2>Din beställning</h2>
     <article v-for="(item, index) in coffeeItem" :key="index">
-      <div>
+      <div class="coffee-item">
         <h4 class="item-title">{{ item.title }}</h4>
         <h4 class="item-dots"></h4>
         <div>
-          <img src="./../assets/arrow-up.svg" alt="arrow up" @click.prevent="addItemToCart" />
-          <h4 class="item-quantity">{{ item.quantity }}</h4>
-          <img src="./../assets/arrow-down.svg" alt="arrow down" @click.prevent="removeItemFromCart" />
+          <img
+            src="./../assets/arrow-up.svg"
+            alt="arrow up"
+            @click.prevent="addItemToCart"
+          />
+          <h6 class="item-quantity">{{ item.quantity }}</h6>
+          <img
+            src="./../assets/arrow-down.svg"
+            alt="arrow down"
+            @click.prevent="removeItemFromCart"
+          />
         </div>
       </div>
       <div class="description">
-        <p class="item-price">{{ item.price }}</p>
+        <p class="item-price">{{ item.price }} kr</p>
       </div>
     </article>
-    <div>
+    <div class="totalPrice">
       <div>
         <h3 class="item-total">Total</h3>
         <h3 class="item-dots"></h3>
-        <h3 class="item-cost">{{ totalCost }}</h3>
+        <h3 class="item-cost">{{ totalCost }} kr</h3>
       </div>
       <p>ink moms + drönarleverans</p>
     </div>
@@ -35,15 +43,15 @@ export default {
   },
   methods: {
     buyItems() {
-        this.$store.dispatch('buyItems')
-        this.$router.push("/status")
+      this.$store.dispatch("orderItems");
+      this.$router.push("/status");
     },
     addItemToCart() {
-      this.$store.commit('addItemToCart', this.$vnode.key)
+      this.$store.commit("addItemToCart", this.$vnode.key);
     },
     removeItemFromCart() {
-        this.$store.commit('removeItemFromCart', this.$vnode.key)
-    }
+      this.$store.commit("removeItemFromCart", this.$vnode.key);
+    },
   },
   computed: {
     totalCost() {
@@ -55,30 +63,72 @@ export default {
 
 <style lang="scss">
 #cart {
-    position: absolute;
-    z-index: 1;
-    background: #FFFFFF;
-    width: 90%;
-    height: 80%;
+  position: absolute;
+  z-index: 1;
+  background: #ffffff;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  article {
     display: flex;
     flex-direction: column;
+    width: 90%;
+
+    .coffee-item {
+      display: flex;
+      flex-direction: row;
+
+      .item-dots {
+        flex: 1;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.3rem;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 0.7rem;
+          height: 0.7rem;
+        }
+      }
+    }
+  }
+
+  .totalPrice {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    div {
+      display: flex;
+      flex-direction: row;
+
+      .item-dots {
+        flex: 1;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+
+  #buy {
+    width: 248px;
+    height: 55px;
+    background: #2f2926;
+    font-family: PT Serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+    border-radius: 50px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-
-    #buy {
-        width: 248px;
-        height: 55px;
-        background: #2F2926;
-        font-family: PT Serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        color: #FFFFFF;
-        border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  }
 }
 </style>
