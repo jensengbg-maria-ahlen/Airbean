@@ -36,5 +36,21 @@
       "desc": "Bryggd på månadens bönor.",
       "price": 39
     }
+  ],
+  "orders": [
+    {
+      "orderNr": "boJI79zuu",
+      "timeStamp": 1601215540492,
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "totalOrderValue": 117
+    }
   ]
 }

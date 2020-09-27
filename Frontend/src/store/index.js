@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import ax from 'axios'
-//import router from './../router'
 
 Vue.use(Vuex)
 
@@ -32,8 +31,8 @@ export default new Vuex.Store({
         Vue.set(product, 'quantity', 1)
       }
     },
-    orderConfirmed(state, item) {
-      state.order = item.data
+    orderConfirmed(state, order) {
+      state.order = order.data
     },
 
     removeItemFromCart(state, itemIndex) {

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = new Router();
-const db = require('./../database')
+const { db } = require('./../database')
 
 router.get('/', (req, res) => {
     let menu = db.get('menu').value();
