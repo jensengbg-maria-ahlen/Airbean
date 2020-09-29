@@ -9,7 +9,7 @@
           <img
             src="./../assets/arrow-up.svg"
             alt="arrow up"
-            @click.prevent="addItemToCart"
+            @click.prevent="addItemInCart"
           />
           <h6 class="item-quantity">{{ item.quantity }}</h6>
           <img
@@ -50,11 +50,11 @@ export default {
         this.$router.push("/status");
       }
     },
-    addItemToCart() {
-      this.$store.commit("addItemToCart", this.$vnode.key);
+    addItemInCart() {
+      this.$store.commit("addItemInCart", this.coffeeItem);
     },
     removeItemFromCart() {
-      this.$store.commit("removeItemFromCart", this.$vnode.key);
+      this.$store.commit("removeItemFromCart", this.coffeeItem);
     },
   },
   computed: {

@@ -4,17 +4,21 @@ const router = new Router();
 const { db } = require('./../database');
 
 router.post('/', (req, res) => {
-    let order = {
-        orderNr: shortid(),
-        timeStamp: Date.now(),
-        items: req.body.items,
-        totalOrderValue: req.body.items.reduce((acc, item) => acc + (item.quantity * item.price), 0)
+    function randomMinutes(min, max) {
+        min = 5;
+        max = 20;
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    console.log(order.items);
+    let order = {
+        items: req.body.items,
+        orderNr: shortid(),
+        totalCost: req.body.items.reduce((acc, item) => acc + (item.quantity * item.price), 0),
+        est: randomMinutes()
+    }
 
     db.get('orders').push(order).write();
-    res.send({orderNr: 'Ordernummer: #' + order.orderNr, msg: 'Din beställning är på väg!' })
+    res.send({orderNr: 'Ordernummer: #' + order.orderNr, msg: 'Din beställning är på väg!', est: order.est})
 });
 
 module.exports = router;

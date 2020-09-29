@@ -3,7 +3,7 @@
     <p>{{ order.orderNr }}</p>
     <img src="./../assets/Group 5.svg" alt="drone">
     <h1>{{ order.msg }}</h1>
-    <h5>Levereras om {{ randomMinutes }} minuter.</h5>
+    <h5>Levereras om {{ order.est }} minuter.</h5>
     <button @click="returnToMenu">Ok, cool!</button>
   </main>
 </template>
@@ -14,11 +14,6 @@ export default {
   computed: {
     order() {
       return this.$store.state.order
-    },
-    randomMinutes(min, max) {
-      min = 5;
-      max = 20;
-      return Math.floor(Math.random() * (max - min + 1) + min);
     }
   },
   methods: {

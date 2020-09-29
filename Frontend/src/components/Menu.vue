@@ -8,7 +8,7 @@
       <p></p>
       <a href="#" @click="goToAbout">Vårt Kaffe</a>
       <p></p>
-      <a href="#">Min Profil</a>
+      <a href="#" id="myProfile">Min Profil</a>
       <p></p>
       <a href="#" @click="goToStatus">Orderstatus</a>
     </nav>
@@ -23,22 +23,17 @@ export default {
       this.$store.commit('toggleMenu')
     },
     goToMenu() {
+      this.$store.commit('toggleMenu')
       this.$router.push("/menu")
-      this.showMenu
     },
     goToAbout() {
+      this.$store.commit('toggleMenu')
       this.$router.push("/about")
-      this.showMenu
     },
     goToStatus() {
+      this.$store.commit('toggleMenu')
       this.$router.push("/status")
-      this.showMenu
     }
-  },
-  computed: {
-    showMenu() {
-      return this.$store.state.show.showMenu
-    },
   }
 };
 </script>
@@ -75,6 +70,10 @@ export default {
       color: #FFFFFF;
       text-decoration: none;
       margin: 1rem;
+    }
+
+    #myProfile {
+      color: #666;
     }
 
     p {
