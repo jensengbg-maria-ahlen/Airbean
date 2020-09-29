@@ -86,6 +86,20 @@
       "orderNr": "9ivvNG9SO",
       "totalCost": 156,
       "est": 18
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 3
+        }
+      ],
+      "orderNr": "tXa6KIB1z",
+      "totalCost": 117,
+      "est": 17
     }
   ]
 }

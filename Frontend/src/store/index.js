@@ -42,11 +42,13 @@ export default new Vuex.Store({
       } 
     },
     removeItemFromCart(state, product) {
-      let cartItem = state.cart.find(item => item.id == product.id);
+      let index = state.cart.findIndex(item => item.id == product.id);
+      let cartItem = state.cart[index]
+      
       if(cartItem.quantity > 1) {
         cartItem.quantity--
       } else {
-        state.cart.splice(product, 1)
+        state.cart.splice(index, 1)
       }
     },
     emptyTheCart(state) {
