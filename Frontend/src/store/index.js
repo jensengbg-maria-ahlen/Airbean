@@ -35,12 +35,19 @@ export default new Vuex.Store({
       state.order = order.data
     },
 
-    addItemInCart(state) {
-      let cartItem = state.cart;
-      console.log(cartItem);
+    addItemInCart(state, product) {
+      let cartItem = state.cart.find(item => item.id == product.id);
+      if(cartItem) {
+        cartItem.quantity++
+      } 
     },
-    removeItemFromCart(state, itemIndex) {
-      state.cart.splice(itemIndex, 1)
+    removeItemFromCart(state, product) {
+      let cartItem = state.cart.find(item => item.id == product.id);
+      if(cartItem.quantity > 1) {
+        cartItem.quantity--
+      } else {
+        state.cart.splice(product, 1)
+      }
     },
     emptyTheCart(state) {
       state.cart = []

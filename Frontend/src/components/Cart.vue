@@ -9,13 +9,13 @@
           <img
             src="./../assets/arrow-up.svg"
             alt="arrow up"
-            @click.prevent="addItemInCart"
+            @click.prevent="addItemInCart(item)"
           />
           <h6 class="item-quantity">{{ item.quantity }}</h6>
           <img
             src="./../assets/arrow-down.svg"
             alt="arrow down"
-            @click.prevent="removeItemFromCart"
+            @click.prevent="removeItemFromCart(item)"
           />
         </div>
       </div>
@@ -50,11 +50,11 @@ export default {
         this.$router.push("/status");
       }
     },
-    addItemInCart() {
-      this.$store.commit("addItemInCart", this.coffeeItem);
+    addItemInCart(item) {
+      this.$store.commit("addItemInCart", item);
     },
-    removeItemFromCart() {
-      this.$store.commit("removeItemFromCart", this.coffeeItem.quantity);
+    removeItemFromCart(item) {
+      this.$store.commit("removeItemFromCart", item);
     },
   },
   computed: {
