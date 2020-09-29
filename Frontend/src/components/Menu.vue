@@ -8,7 +8,7 @@
       <p></p>
       <a href="#" @click="goTo('/about')">Vårt Kaffe</a>
       <p></p>
-      <a href="#" id="myProfile">Min Profil</a>
+      <a href="#" @click="goTo('/profile')" >Min Profil</a>
       <p></p>
       <a href="#" @click="goTo('/status')">Orderstatus</a>
     </nav>
@@ -64,10 +64,6 @@ export default {
       color: #FFFFFF;
       text-decoration: none;
       margin: 1rem;
-    }
-
-    #myProfile {
-      color: #666;
     }
 
     p {

@@ -13,6 +13,7 @@ body {
 
         #home {
             width: 100%;
+            min-height: 100vh;
             background-color: #0E927D;
             background-image: url('./assets/header-left.svg'), url('./assets/header-right.svg');
             background-position: left center, right center;
@@ -28,6 +29,7 @@ body {
 
         #about , #coffeeMenu{
             width: 100%;
+            min-height: 100vh;
             background-color: #F3E4E1;
             background-image: url('./assets/header-top.svg'), url('./assets/header-bottom.svg');
             background-position: top center, bottom center;
@@ -40,8 +42,24 @@ body {
             flex-direction: column;
         }
 
+        #profile {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #2F2926;
+            background-image: url('./assets/header-top.svg');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+        }
+
         #orderStatus {
             width: 100%;
+            min-height: 100vh;
             background: #E5674E;
             color: #FFFFFF;
             padding: 1rem;
