@@ -4,13 +4,13 @@
       <img src="./../assets/close.png" alt="close" @click="toggleMenu" class="closeButton" />
     </section>
     <nav>
-      <a href="#" @click="goToMenu">Meny</a>
+      <a href="#" @click="goTo('/menu')">Meny</a>
       <p></p>
-      <a href="#" @click="goToAbout">Vårt Kaffe</a>
+      <a href="#" @click="goTo('/about')">Vårt Kaffe</a>
       <p></p>
       <a href="#" id="myProfile">Min Profil</a>
       <p></p>
-      <a href="#" @click="goToStatus">Orderstatus</a>
+      <a href="#" @click="goTo('/status')">Orderstatus</a>
     </nav>
   </article>
 </template>
@@ -22,17 +22,11 @@ export default {
     toggleMenu() {
       this.$store.commit('toggleMenu')
     },
-    goToMenu() {
+    goTo(route) {
       this.$store.commit('toggleMenu')
-      this.$router.push("/menu")
-    },
-    goToAbout() {
-      this.$store.commit('toggleMenu')
-      this.$router.push("/about")
-    },
-    goToStatus() {
-      this.$store.commit('toggleMenu')
-      this.$router.push("/status")
+      if(route !== this.$route.path){
+        this.$router.push(route);
+      }
     }
   }
 };

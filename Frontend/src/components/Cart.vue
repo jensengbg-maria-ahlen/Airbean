@@ -54,7 +54,7 @@ export default {
       this.$store.commit("addItemInCart", this.coffeeItem);
     },
     removeItemFromCart() {
-      this.$store.commit("removeItemFromCart", this.coffeeItem);
+      this.$store.commit("removeItemFromCart", this.coffeeItem.quantity);
     },
   },
   computed: {
