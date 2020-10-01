@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <Menu v-if="showMenu" />
-      <Cart :coffeeItem="cart" v-if="showCart"/>
+      <Cart :coffeeItem="cart" v-if="showCart" />
     </header>
     <router-view />
   </div>

@@ -12,7 +12,9 @@ export default new Vuex.Store({
     order: Object,
     show: {
       showCart: false,
-      showMenu: false
+      showMenu: false,
+      showFamilyAirBean: true,
+      showProfile: false
     }
   },
   mutations: {
