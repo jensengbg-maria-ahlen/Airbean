@@ -10,6 +10,11 @@ export default new Vuex.Store({
     menu: Array,
     cart: [],
     order: Object,
+    user: {
+      name: "",
+      email: "",
+    },
+    orders: [],
 
     //set a class to toggle
     show: {
@@ -19,6 +24,7 @@ export default new Vuex.Store({
       showProfile: false,
     }
   },
+
   mutations: {
     //show the menu
     showProducts(state, data) {
@@ -84,10 +90,12 @@ export default new Vuex.Store({
       state.show.showProfile = !state.show.showProfile;
     },
 
-    //store the value in sessionStorage
-    storeValue() {
+    //value from the input
+    storeValue(state, value) {
+      state.user = value
     }
   },
+
   actions: {
     //fetch the menu from the backend
     async fetchMenu(ctx) {
@@ -103,8 +111,15 @@ export default new Vuex.Store({
       ctx.commit('orderConfirmed', data)
       ctx.commit('emptyTheCart')
       ctx.commit('toggleCart')
+    },
+
+    //save userValue in sessionStorage
+    userValue(ctx, inputValue) {
+      ctx.commit('storeValue', inputValue);
+      sessionStorage.setItem('user',  JSON.stringify(inputValue))
     }
   },
+
   getters: {
     //calculate the total cost of the cart
     totalCost(state) {

@@ -10,9 +10,17 @@
     <section class="selections">
       <section class="inputFields">
         <span>Namn</span>
-        <input type="text" id="name" v-model="inputValue.name" />
+        <input 
+          type="text" 
+          id="name" 
+          v-model="inputValue.name" 
+          />
         <span>Epost</span>
-        <input type="text" id="email" v-model="inputValue.email" />
+        <input 
+          type="text" 
+          id="email" 
+          v-model="inputValue.email" 
+          />
       </section>
       <section id="radioGDPR">
         <input
@@ -42,16 +50,14 @@ export default {
   },
   methods: {
     logIn() {
-      if (this.checked == false) {
-        alert("Du måste godkänna villkoren!");
-      } else if (this.inputValue.name >= 0 && this.inputValue.email >= 0) {
+      if (this.inputValue.name >= 0 && this.inputValue.email >= 0) {
         alert("Du har inte fyllt i alla värden");
+      } else if (this.checked == false) {
+        alert("Du måste godkänna villkoren!"); 
       } else {
+        this.$store.dispatch("userValue", this.inputValue);
         this.$store.commit("toggleProfile");
       }
-    },
-    storeValue() {
-      this.$store.commit("storeValue", this.inputValue);
     },
     radioChecked() {
       this.checked = !this.checked;

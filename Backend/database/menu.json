@@ -38,6 +38,34 @@
     }
   ],
   "orders": [
-    
+    {
+      "items": [
+        {
+          "id": 6,
+          "title": "Cortado",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "title": "Kaffe Latte",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 54,
+          "quantity": 2
+        },
+        {
+          "id": 4,
+          "title": "Latte Macchiato",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 49,
+          "quantity": 1
+        }
+      ],
+      "orderNr": "Opwq0Fj2f",
+      "totalCost": 196,
+      "est": 9,
+      "date": "2020-10-02"
+    }
   ]
 }

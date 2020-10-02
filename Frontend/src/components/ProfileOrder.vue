@@ -2,10 +2,10 @@
   <article id="profileOrder">
     <section class="profileName">
       <img src="./../assets/Profile.svg" alt="profilePic" id="profilePic" />
-      <h3>Sixten Kaffelövér</h3>
-      <h6>sixten.kaffelover@zocom.se</h6>
+      <h3>{{ userInfo.name }}</h3>
+      <h6>{{ userInfo.email }}</h6>
     </section>
-    <section class="orderHistory">
+    <section class="orderHistory" v-for="order in orders" :key="order.index">
       <h3>Orderhistorik</h3>
       <div class="totalHistory">
         <div class="historyOrder">
@@ -28,6 +28,9 @@
 <script>
 export default {
   name: "ProfileOrder",
+  props: {
+    userInfo: Object
+  }
 };
 </script>
 
