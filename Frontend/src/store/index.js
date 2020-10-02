@@ -38,7 +38,7 @@ export default new Vuex.Store({
       }
     },
 
-    //when pressing the button "take my money" it creates an order
+    //when pressing the button "take my money" it creates a new order
     orderConfirmed(state, order) {
       state.order = order.data
     },
@@ -78,7 +78,7 @@ export default new Vuex.Store({
       state.show.showCart = !state.show.showCart
     },
 
-    //toggle the profile
+    //toggle from FamilyAirBean to ProfileOrder
     toggleProfile(state) {
       state.show.showFamilyAirBean = !state.show.showFamilyAirBean;
       state.show.showProfile = !state.show.showProfile;

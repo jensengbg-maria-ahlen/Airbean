@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
     }
 
     db.get('orders').push(order).write();
-    res.send({orderNr: 'Ordernummer: #' + order.orderNr, msg: 'Din beställning är på väg!', est: order.est, date: order.date})
+    res.send({orderNr: 'Ordernummer: #' + order.orderNr, msg: 'Din beställning är på väg!', est: order.est})
 });
 
 module.exports = router;
