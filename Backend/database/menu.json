@@ -38,26 +38,6 @@
     }
   ],
   "orders": [
-    {
-      "items": [
-        {
-          "id": 1,
-          "title": "Bryggkaffe",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 39,
-          "quantity": 2
-        },
-        {
-          "id": 3,
-          "title": "Cappuccino",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 49,
-          "quantity": 3
-        }
-      ],
-      "orderNr": "AwxVDpwqI",
-      "totalCost": 225,
-      "est": 20
-    }
+    
   ]
 }

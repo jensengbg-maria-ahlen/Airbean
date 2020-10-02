@@ -30,12 +30,10 @@ export default {
   },
   computed: {
     showFamilyAirBean() {
-      return !this.$store.state.show.showFamilyAirBean;
-
-      // return !this.$store.state.show.showFamilyAirBean  --- denna gör att de blir falsk ist.
+      return this.$store.state.show.showFamilyAirBean;
     },
     showProfile() {
-      return !this.$store.state.show.showProfile;
+      return this.$store.state.show.showProfile;
     },
   },
 };

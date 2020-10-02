@@ -27,9 +27,9 @@ export default {
   name: "FamilyAirBean",
   methods: {
     logIn() {
-      console.log("hej");
+      this.$store.commit('toggleProfile')
     },
-  },
+  }
 };
 </script>
 
@@ -101,6 +101,7 @@ export default {
   #brewButton {
     width: 248px;
     height: 55px;
+    margin: 1rem;
     background: #2f2926;
     font-family: PT Serif;
     font-style: normal;
