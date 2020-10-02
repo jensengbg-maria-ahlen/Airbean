@@ -17,7 +17,6 @@ export default new Vuex.Store({
       showMenu: false,
       showFamilyAirBean: true,
       showProfile: false,
-      checked: false
     }
   },
   mutations: {
@@ -85,12 +84,8 @@ export default new Vuex.Store({
       state.show.showProfile = !state.show.showProfile;
     },
 
-    toggleChecked(state) {
-      state.show.checked = !state.show.checked
-    },
-
-
-    checkValue() {
+    //store the value in sessionStorage
+    storeValue() {
     }
   },
   actions: {

@@ -15,7 +15,13 @@
         <input type="text" id="email" v-model="inputValue.email" />
       </section>
       <section id="radioGDPR">
-        <input type="radio" name="GDPR" id="GDPR" :checked="checked" @click="radioChecked" />GDPR Ok!
+        <input
+          type="radio"
+          name="GDPR"
+          id="GDPR"
+          :checked="checked"
+          @click="radioChecked"
+        />GDPR Ok!
       </section>
     </section>
     <button id="brewButton" @click="logIn">Brew me a cup!</button>
@@ -28,27 +34,29 @@ export default {
   data() {
     return {
       inputValue: {
-        name: '',
-        email: ''
+        name: "",
+        email: "",
       },
-      checked: false
-    }
+      checked: false,
+    };
   },
   methods: {
     logIn() {
-      if(this.checked == false) {
-        alert('Du måste godkänna villkoren!')
+      if (this.checked == false) {
+        alert("Du måste godkänna villkoren!");
+      } else if (this.inputValue.name >= 0 && this.inputValue.email >= 0) {
+        alert("Du har inte fyllt i alla värden");
       } else {
-        this.$store.commit('toggleProfile')
+        this.$store.commit("toggleProfile");
       }
     },
-    checkValue() {
-      this.$store.commit('checkValue', this.inputValue)
+    storeValue() {
+      this.$store.commit("storeValue", this.inputValue);
     },
     radioChecked() {
-      this.checked = !this.checked
-      return this.checked
-    }
+      this.checked = !this.checked;
+      return this.checked;
+    },
   },
 };
 </script>
