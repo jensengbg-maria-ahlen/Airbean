@@ -16,7 +16,8 @@ export default new Vuex.Store({
       showCart: false,
       showMenu: false,
       showFamilyAirBean: true,
-      showProfile: false
+      showProfile: false,
+      checked: false
     }
   },
   mutations: {
@@ -82,6 +83,14 @@ export default new Vuex.Store({
     toggleProfile(state) {
       state.show.showFamilyAirBean = !state.show.showFamilyAirBean;
       state.show.showProfile = !state.show.showProfile;
+    },
+
+    toggleChecked(state) {
+      state.show.checked = !state.show.checked
+    },
+
+
+    checkValue() {
     }
   },
   actions: {

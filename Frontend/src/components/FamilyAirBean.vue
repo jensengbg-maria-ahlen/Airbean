@@ -10,12 +10,12 @@
     <section class="selections">
       <section class="inputFields">
         <span>Namn</span>
-        <input type="text" id="name" />
+        <input type="text" id="name" v-model="inputValue.name" />
         <span>Epost</span>
-        <input type="text" id="email" />
+        <input type="text" id="email" v-model="inputValue.email" />
       </section>
       <section id="radioGDPR">
-        <input type="radio" name="GDPR" id="GDPR" />GDPR Ok!
+        <input type="radio" name="GDPR" id="GDPR" :checked="checked" @click="radioChecked" />GDPR Ok!
       </section>
     </section>
     <button id="brewButton" @click="logIn">Brew me a cup!</button>
@@ -25,11 +25,31 @@
 <script>
 export default {
   name: "FamilyAirBean",
+  data() {
+    return {
+      inputValue: {
+        name: '',
+        email: ''
+      },
+      checked: false
+    }
+  },
   methods: {
     logIn() {
-      this.$store.commit('toggleProfile')
+      if(this.checked == false) {
+        alert('Du måste godkänna villkoren!')
+      } else {
+        this.$store.commit('toggleProfile')
+      }
     },
-  }
+    checkValue() {
+      this.$store.commit('checkValue', this.inputValue)
+    },
+    radioChecked() {
+      this.checked = !this.checked
+      return this.checked
+    }
+  },
 };
 </script>
 
