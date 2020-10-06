@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         orderNr: shortid(),
         totalCost: req.body.items.reduce((acc, item) => acc + (item.quantity * item.price), 0),
         est: randomMinutes(),
-        date: date()
+        date: date(),
     }
 
     db.get('orders').push(order).write();

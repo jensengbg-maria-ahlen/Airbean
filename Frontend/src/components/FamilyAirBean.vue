@@ -56,6 +56,8 @@ export default {
         alert("Du måste godkänna villkoren!"); 
       } else {
         this.$store.dispatch("userValue", this.inputValue);
+        this.$store.dispatch("usersFromFrontend");
+        this.$store.commit("storeValue");
         this.$store.commit("toggleProfile");
       }
     },

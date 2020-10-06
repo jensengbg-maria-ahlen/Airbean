@@ -14,7 +14,7 @@ export default new Vuex.Store({
       name: "",
       email: "",
     },
-    orders: [],
+    userID: [],
 
     //set a class to toggle
     show: {
@@ -90,10 +90,16 @@ export default new Vuex.Store({
       state.show.showProfile = !state.show.showProfile;
     },
 
-    //value from the input
-    storeValue(state, value) {
-      state.user = value
-    }
+    //value from the input that pushes in to the database.
+    storeValue(state, inputValue) {
+      state.userID.push(inputValue)
+      state.user = inputValue;
+    },
+
+    //value that is going in the database
+    valueFromUser(state, value) {
+      state.userID = value
+    },
   },
 
   actions: {
@@ -111,6 +117,14 @@ export default new Vuex.Store({
       ctx.commit('orderConfirmed', data)
       ctx.commit('emptyTheCart')
       ctx.commit('toggleCart')
+    },
+
+    //send users to the backend
+    async usersFromFrontend(ctx) {
+      let data = await ax.post(`${ctx.state.apiUrl}/user`, {
+        userID: ctx.state.userID
+      });
+      ctx.commit('valueFromUser', data)
     },
 
     //save userValue in sessionStorage
