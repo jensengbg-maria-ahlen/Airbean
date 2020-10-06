@@ -5,23 +5,23 @@
       <h3>{{ userInfo.name }}</h3>
       <h6>{{ userInfo.email }}</h6>
     </section>
-    <section class="orderHistory" v-for="order in orders" :key="order.index">
-      <h3>Orderhistorik</h3>
+    <h3>Orderhistorik</h3>
+    <section class="orderHistory" v-for="order in orderInfo" :key="order.index">
       <div class="totalHistory">
         <div class="historyOrder">
-          <h5>#ABCDEFG</h5>
-          <h5 class="orderDate">20/10/01</h5>
+          <h5>{{ order.orderNr }}</h5>
+          <h5 class="orderDate">{{ order.date }}</h5>
         </div>
         <div class="historyCost">
           <h6>total ordersumma</h6>
-          <h6>325 kr</h6>
+          <h6>{{ order.totalCost }} kr</h6>
         </div>
       </div>
-      <div class="totalSpent">
-        <h5>Totalt spenderat</h5>
-        <h5>3000 kr</h5>
-      </div>
     </section>
+    <div class="totalSpent">
+      <h5>Totalt spenderat</h5>
+      <h5>{{ totalOrderCost }} kr</h5>
+    </div>
   </article>
 </template>
 
@@ -29,7 +29,13 @@
 export default {
   name: "ProfileOrder",
   props: {
-    userInfo: Object
+    userInfo: Array,
+    orderInfo: Array
+  },
+  methods: {
+    totalOrderCost() {
+      return this.$store.getters.totalOrderCost
+    }
   }
 };
 </script>
@@ -54,11 +60,11 @@ export default {
     #profilePic {
       margin-bottom: 0.5rem;
     }
+  }
 
-    h3 {
+  h3 {
       margin: 0.5rem;
     }
-  }
 
   .orderHistory {
     display: flex;
@@ -97,8 +103,8 @@ export default {
         margin: .3rem 0 .5rem 0;
       }
     }
-
-    .totalSpent {
+  }
+  .totalSpent {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -110,6 +116,5 @@ export default {
         margin-top: 0.5rem;
       }
     }
-  }
 }
 </style>

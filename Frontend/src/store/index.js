@@ -15,6 +15,8 @@ export default new Vuex.Store({
       email: "",
     },
     userID: [],
+    orders: Array,
+    users: Array,
 
     //set a class to toggle
     show: {
@@ -26,9 +28,19 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    //show the menu
+    //show the menu from backend
     showProducts(state, data) {
       state.menu = data
+    },
+
+    //show orders from backend
+    showOrders(state, data) {
+      state.orders = data
+    },
+
+    //show users from backend
+    showUsers(state, data) {
+      state.users = data
     },
 
     //add item to the cart from menu
@@ -107,6 +119,8 @@ export default new Vuex.Store({
     async fetchMenu(ctx) {
       let data = await ax.get(`${ctx.state.apiUrl}/menu`);
       ctx.commit('showProducts', data.data.menu);
+      ctx.commit('showOrders', data.data.orders);
+      ctx.commit('showUsers', data.data.users);
     },
 
     //send the cartitems to the backends database
@@ -142,6 +156,16 @@ export default new Vuex.Store({
       })
       return items.reduce(function (price, product) {
         return price + product;
+      }, 0)
+    },
+
+    //calculate the total cost of orderHistory 
+    totalOrderCost(state) {
+      let items = state.orders.map(item => {
+        return item.totalCost * item
+      })
+      return items.reduce(function (price, total) {
+        return price * total;
       }, 0)
     },
 

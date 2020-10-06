@@ -9,7 +9,7 @@
       />
     </nav>
     <FamilyAirBean v-if="showFamilyAirBean" />
-    <ProfileOrder v-if="showProfile" :userInfo="userInfo"/>
+    <ProfileOrder v-if="showProfile" :userInfo="userInfo" :orderInfo="orderInfo" />
   </main>
 </template>
 
@@ -36,7 +36,10 @@ export default {
       return this.$store.state.show.showProfile;
     },
     userInfo() {
-      return this.$store.state.user
+      return this.$store.state.users
+    },
+    orderInfo() {
+      return this.$store.state.orders
     }
   },
 };

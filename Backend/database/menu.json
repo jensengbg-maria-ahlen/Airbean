@@ -37,16 +37,56 @@
       "price": 39
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "Bryggkaffe",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 6
+        }
+      ],
+      "orderNr": "VDvWyiAxC",
+      "totalCost": 234,
+      "est": 10,
+      "date": "2020-10-06"
+    },
+    {
+      "items": [
+        {
+          "id": 6,
+          "title": "Cortado",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 39,
+          "quantity": 4
+        }
+      ],
+      "orderNr": "_gNyqJmrY",
+      "totalCost": 156,
+      "est": 16,
+      "date": "2020-10-06"
+    }
+  ],
   "users": [
     {
       "user": [
         {
-          "name": "maria",
-          "email": "maria"
+          "name": "Maria Åhlén",
+          "email": "maria.ahlen@mejl.com"
         }
       ],
-      "id": "EBfPT-Hc1"
+      "id": "7a30yS5po"
+    },
+    {
+      "user": [
+        {
+          "name": "Kalle Svensson",
+          "email": "kalle.svensson@mejl.se"
+        }
+      ],
+      "id": "AZ61ZmYA1"
     }
   ]
 }
