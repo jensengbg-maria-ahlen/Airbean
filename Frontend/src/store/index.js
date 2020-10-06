@@ -64,17 +64,17 @@ export default new Vuex.Store({
     //add item when in the cart
     addItemInCart(state, product) {
       let cartItem = state.cart.find(item => item.id == product.id);
-      if(cartItem) {
+      if (cartItem) {
         cartItem.quantity++
-      } 
+      }
     },
 
     //remove item when in the cart
     removeItemFromCart(state, product) {
       let index = state.cart.findIndex(item => item.id == product.id);
       let cartItem = state.cart[index]
-      
-      if(cartItem.quantity > 1) {
+
+      if (cartItem.quantity > 1) {
         cartItem.quantity--
       } else {
         state.cart.splice(index, 1)
@@ -144,7 +144,7 @@ export default new Vuex.Store({
     //save userValue in sessionStorage
     userValue(ctx, inputValue) {
       ctx.commit('storeValue', inputValue);
-      sessionStorage.setItem('user',  JSON.stringify(inputValue))
+      sessionStorage.setItem('user', JSON.stringify(inputValue))
     }
   },
 

@@ -59,6 +59,7 @@ export default {
       } else {
         this.$store.dispatch("userValue", this.inputValue);
         this.$store.dispatch("usersFromFrontend");
+        this.$store.dispatch("fetchMenu");
         this.$store.commit("storeValue");
         this.$store.commit("toggleProfile");
       }
