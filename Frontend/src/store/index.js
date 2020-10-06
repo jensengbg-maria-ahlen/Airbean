@@ -162,10 +162,10 @@ export default new Vuex.Store({
     //calculate the total cost of orderHistory 
     totalOrderCost(state) {
       let items = state.orders.map(item => {
-        return item.totalCost * item
+        return item.totalCost
       })
-      return items.reduce(function (price, total) {
-        return price * total;
+      return items.reduce(function (totalCost, product) {
+        return totalCost + product
       }, 0)
     },
 

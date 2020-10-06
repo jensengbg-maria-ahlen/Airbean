@@ -20,7 +20,7 @@
     </section>
     <div class="totalSpent">
       <h5>Totalt spenderat</h5>
-      <h5>{{ totalOrderCost }} kr</h5>
+      <h5>{{ totalOrderCost() }} kr</h5>
     </div>
   </article>
 </template>
