@@ -41,35 +41,12 @@
     {
       "items": [
         {
-          "id": 1,
-          "title": "Bryggkaffe",
+          "id": 2,
+          "title": "Caffè Doppio",
           "desc": "Bryggd på månadens bönor.",
-          "price": 39,
-          "quantity": 6
-        }
-      ],
-      "orderNr": "VDvWyiAxC",
-      "totalCost": 234,
-      "est": 10,
-      "date": "2020-10-06"
-    },
-    {
-      "items": [
-        {
-          "id": 6,
-          "title": "Cortado",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 39,
-          "quantity": 4
-        }
-      ],
-      "orderNr": "_gNyqJmrY",
-      "totalCost": 156,
-      "est": 16,
-      "date": "2020-10-06"
-    },
-    {
-      "items": [
+          "price": 49,
+          "quantity": 1
+        },
         {
           "id": 3,
           "title": "Cappuccino",
@@ -78,16 +55,38 @@
           "quantity": 2
         },
         {
+          "id": 4,
+          "title": "Latte Macchiato",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 49,
+          "quantity": 1
+        }
+      ],
+      "orderNr": "xka9LTi2i",
+      "totalCost": 196,
+      "est": 8,
+      "date": "2020-10-06"
+    },
+    {
+      "items": [
+        {
           "id": 6,
           "title": "Cortado",
           "desc": "Bryggd på månadens bönor.",
           "price": 39,
-          "quantity": 3
+          "quantity": 2
+        },
+        {
+          "id": 5,
+          "title": "Kaffe Latte",
+          "desc": "Bryggd på månadens bönor.",
+          "price": 54,
+          "quantity": 1
         }
       ],
-      "orderNr": "gHikxqlaY",
-      "totalCost": 215,
-      "est": 17,
+      "orderNr": "ktuH1r0xB",
+      "totalCost": 132,
+      "est": 9,
       "date": "2020-10-06"
     },
     {
@@ -104,34 +103,12 @@
           "title": "Cappuccino",
           "desc": "Bryggd på månadens bönor.",
           "price": 49,
-          "quantity": 2
+          "quantity": 1
         }
       ],
-      "orderNr": "7QP2pwIuB",
-      "totalCost": 196,
-      "est": 11,
-      "date": "2020-10-06"
-    },
-    {
-      "items": [
-        {
-          "id": 2,
-          "title": "Caffè Doppio",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 49,
-          "quantity": 2
-        },
-        {
-          "id": 3,
-          "title": "Cappuccino",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 49,
-          "quantity": 3
-        }
-      ],
-      "orderNr": "SCpYK2y-I",
-      "totalCost": 245,
-      "est": 11,
+      "orderNr": "ApI7SBqFg",
+      "totalCost": 147,
+      "est": 17,
       "date": "2020-10-06"
     }
   ],
@@ -139,83 +116,11 @@
     {
       "user": [
         {
-          "name": "Maria Åhlén",
-          "email": "maria.ahlen@mejl.com"
-        }
-      ],
-      "id": "7a30yS5po"
-    },
-    {
-      "user": [
-        {
-          "name": "Kalle Svensson",
-          "email": "kalle.svensson@mejl.se"
-        }
-      ],
-      "id": "AZ61ZmYA1"
-    },
-    {
-      "user": [
-        {
-          "name": "Maria Åhlen",
-          "email": "maria.ahlen@irisity.com"
-        }
-      ],
-      "id": "YGv7fI5gS"
-    },
-    {
-      "user": [
-        {
-          "name": "Hej hej",
-          "email": "hej.hej@hej.com"
-        }
-      ],
-      "id": "cc63Zz3mv"
-    },
-    {
-      "user": [
-        {
-          "name": "erhwejkrh",
-          "email": "jrhekrjh"
-        }
-      ],
-      "id": "mqKwvvX4z"
-    },
-    {
-      "user": [
-        {
-          "name": "lfjldsfj",
-          "email": "jwlejtlk"
-        }
-      ],
-      "id": "5ziL_Vb6b"
-    },
-    {
-      "user": [
-        {
-          "name": "sdfkjwlfj",
-          "email": "lekjflkdjflk"
-        }
-      ],
-      "id": "jSvPGnV_8"
-    },
-    {
-      "user": [
-        {
           "name": "Maria Åhlen",
           "email": "maria.ahlen@mejl.com"
         }
       ],
-      "id": "J27XsTkjV"
-    },
-    {
-      "user": [
-        {
-          "name": "Maria Åhlén",
-          "email": "maria.ahlen@irisity.com"
-        }
-      ],
-      "id": "9DRmYOxIT"
+      "id": "457a6joRR"
     },
     {
       "user": [
@@ -224,7 +129,7 @@
           "email": "marialundgren93@gmail.com"
         }
       ],
-      "id": "Eeyrfo8f_"
+      "id": "7YVwBG4jS"
     }
   ]
 }

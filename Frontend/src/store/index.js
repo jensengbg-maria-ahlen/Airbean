@@ -16,7 +16,7 @@ export default new Vuex.Store({
     },
     userID: [],
     orders: Array,
-    users: Array,
+    users: Object,
 
     //set a class to toggle
     show: {
