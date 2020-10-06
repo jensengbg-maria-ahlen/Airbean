@@ -108,7 +108,7 @@ export default new Vuex.Store({
       state.user = inputValue;
     },
 
-    //value that is going in the database
+    //set the data on the state that is going in the database
     valueFromUser(state, value) {
       state.userID = value
     },

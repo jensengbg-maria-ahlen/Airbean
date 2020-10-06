@@ -50,8 +50,10 @@ export default {
   },
   methods: {
     logIn() {
-      if (this.inputValue.name >= 0 && this.inputValue.email >= 0) {
-        alert("Du har inte fyllt i alla värden");
+      if (this.inputValue.name >= 0) {
+        alert("Du har inte fyllt i namn");
+      } else if(this.inputValue.email >= 0) {
+        alert("Du har inte fyllt i email");
       } else if (this.checked == false) {
         alert("Du måste godkänna villkoren!"); 
       } else {

@@ -9,7 +9,7 @@
     <section class="orderHistory" v-for="order in orderInfo" :key="order.index">
       <div class="totalHistory">
         <div class="historyOrder">
-          <h5>{{ order.orderNr }}</h5>
+          <h5>#{{ order.orderNr }}</h5>
           <h5 class="orderDate">{{ order.date }}</h5>
         </div>
         <div class="historyCost">

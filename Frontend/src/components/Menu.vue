@@ -36,8 +36,8 @@ export default {
 #menu {
   background: #2f2926;
   width: 100%;
-  height: 150%;
-  position: absolute;
+  height: 100%;
+  position: fixed;
   z-index: 1;
   display: flex;
   flex-direction: column;
