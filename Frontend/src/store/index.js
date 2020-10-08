@@ -146,6 +146,7 @@ export default new Vuex.Store({
       }, 0)
     },
 
+    //calculate the total order when logged in
     totalOrderCost(state) {
       return state.user.orderHistory.reduce((acc, item) => acc + item.totalCost, 0)
     },

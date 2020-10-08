@@ -96,6 +96,12 @@
           "date": "2020-10-08"
         }
       ]
+    },
+    {
+      "name": "Emma",
+      "email": "emma@mail.com",
+      "id": 2,
+      "orderHistory": []
     }
   ]
 }
