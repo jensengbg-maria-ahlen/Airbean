@@ -8,8 +8,8 @@
         alt="navIcon"
       />
     </nav>
-    <FamilyAirBean v-if="showFamilyAirBean" />
-    <ProfileOrder v-if="showProfile" :userInfo="userInfo" :orderInfo="orderInfo" />
+    <FamilyAirBean v-if="showLogin" />
+    <ProfileOrder v-if="showProfile" :userInfo="userInfo" />
   </main>
 </template>
 
@@ -29,19 +29,19 @@ export default {
     },
   },
   computed: {
-    showFamilyAirBean() {
-      return this.$store.state.show.showFamilyAirBean;
+    showLogin() {
+      return this.$store.state.show.showLogin;
     },
     showProfile() {
       return this.$store.state.show.showProfile;
     },
     userInfo() {
-      return this.$store.state.users
-    },
-    orderInfo() {
-      return this.$store.state.orders
+      return this.$store.state.user
     }
   },
+  beforeMount() {
+    this.$store.dispatch("showHistory");
+  }
 };
 </script>
 

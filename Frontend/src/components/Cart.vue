@@ -47,7 +47,6 @@ export default {
         alert('Din varukorg är tom!');
       } else {
         this.$store.dispatch("orderItems");
-        this.$store.dispatch("fetchMenu");
         this.$router.push("/status");
       }
     },

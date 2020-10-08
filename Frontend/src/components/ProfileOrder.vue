@@ -1,12 +1,12 @@
 <template>
   <article id="profileOrder">
-    <section class="profileName">
+    <section class="profileName" v-if="userInfo.name">
       <img src="./../assets/Profile.svg" alt="profilePic" id="profilePic" />
       <h3>{{ userInfo.name }}</h3>
       <h6>{{ userInfo.email }}</h6>
     </section>
     <h3>Orderhistorik</h3>
-    <section class="orderHistory" v-for="order in orderInfo" :key="order.index">
+    <section class="orderHistory" v-for="order in userInfo.orderHistory" :key="order.index">
       <div class="totalHistory">
         <div class="historyOrder">
           <h5>#{{ order.orderNr }}</h5>
@@ -29,9 +29,9 @@
 export default {
   name: "ProfileOrder",
   props: {
-    userInfo: Array,
-    orderInfo: Array
+    userInfo: Object,
   },
+
   methods: {
     totalOrderCost() {
       return this.$store.getters.totalOrderCost

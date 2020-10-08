@@ -9,21 +9,15 @@ export default new Vuex.Store({
     apiUrl: 'http://localhost:3000',
     menu: Array,
     cart: [],
-    order: Object,
-    user: {
-      name: "",
-      email: "",
-    },
-    userID: [],
-    orders: Array,
-    users: Object,
+    order: {},
+    user: {},
 
     //set a class to toggle
     show: {
       showCart: false,
       showMenu: false,
-      showFamilyAirBean: true,
       showProfile: false,
+      showLogin: true
     }
   },
 
@@ -33,14 +27,9 @@ export default new Vuex.Store({
       state.menu = data
     },
 
-    //show orders from backend
-    showOrders(state, data) {
-      state.orders = data
-    },
-
-    //show users from backend
-    showUsers(state, data) {
-      state.users = data
+    //show user from backend 
+    showUser(state, data) {
+      state.user = data
     },
 
     //add item to the cart from menu
@@ -98,20 +87,10 @@ export default new Vuex.Store({
 
     //toggle from FamilyAirBean to ProfileOrder
     toggleProfile(state) {
-      state.show.showFamilyAirBean = !state.show.showFamilyAirBean;
+      state.show.showLogin = !state.show.showLogin;
       state.show.showProfile = !state.show.showProfile;
     },
 
-    //value from the input that pushes in to the database.
-    storeValue(state, inputValue) {
-      state.userID.push(inputValue)
-      state.user = inputValue;
-    },
-
-    //set the data on the state that is going in the database
-    valueFromUser(state, value) {
-      state.userID = value
-    },
   },
 
   actions: {
@@ -119,32 +98,40 @@ export default new Vuex.Store({
     async fetchMenu(ctx) {
       let data = await ax.get(`${ctx.state.apiUrl}/menu`);
       ctx.commit('showProducts', data.data.menu);
-      ctx.commit('showOrders', data.data.orders);
-      ctx.commit('showUsers', data.data.users);
     },
 
     //send the cartitems to the backends database
     async orderItems(ctx) {
       let data = await ax.post(`${ctx.state.apiUrl}/order`, {
-        items: ctx.state.cart
+        items: ctx.state.cart,
+        user: JSON.parse(sessionStorage.getItem("user")),
       });
       ctx.commit('orderConfirmed', data)
       ctx.commit('emptyTheCart')
       ctx.commit('toggleCart')
     },
 
-    //send users to the backend
-    async usersFromFrontend(ctx) {
-      let data = await ax.post(`${ctx.state.apiUrl}/user`, {
-        userID: ctx.state.userID
-      });
-      ctx.commit('valueFromUser', data)
+    //check if user is logged in
+    async checkState(ctx) {
+      if (sessionStorage.getItem("user") !== null) {
+        ctx.commit("showUser", JSON.parse(sessionStorage.getItem("user")))
+      } else {
+        alert('Fel användarnamn eller lösenord');
+      }
     },
 
-    //save userValue in sessionStorage
-    userValue(ctx, inputValue) {
-      ctx.commit('storeValue', inputValue);
-      sessionStorage.setItem('user',  JSON.stringify(inputValue))
+    //login from backend
+     async login(ctx, loginValue) {
+      let data = await ax.post(`${ctx.state.apiUrl}/login`, loginValue);
+      ctx.commit('showUser', data.data)
+      sessionStorage.setItem('user', JSON.stringify(data.data))
+    },
+
+    //show history
+    async showHistory(ctx) {
+      let user = JSON.parse(sessionStorage.getItem("user"));
+      let data = await ax.get(`${ctx.state.apiUrl}/user/${user.id}`);
+      ctx.commit("showUser", data.data)
     }
   },
 
@@ -159,14 +146,8 @@ export default new Vuex.Store({
       }, 0)
     },
 
-    //calculate the total cost of orderHistory 
     totalOrderCost(state) {
-      let items = state.orders.map(item => {
-        return item.totalCost
-      })
-      return items.reduce(function (totalCost, product) {
-        return totalCost + product
-      }, 0)
+      return state.user.orderHistory.reduce((acc, item) => acc + item.totalCost, 0)
     },
 
     //calculate the total quantity to show in cart. 

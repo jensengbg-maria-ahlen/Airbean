@@ -48,6 +48,8 @@ export default {
       checked: false,
     };
   },
+  computed: {
+  },
   methods: {
     logIn() {
       if (this.inputValue.name >= 0) {
@@ -57,10 +59,7 @@ export default {
       } else if (this.checked == false) {
         alert("Du måste godkänna villkoren!"); 
       } else {
-        this.$store.dispatch("userValue", this.inputValue);
-        this.$store.dispatch("usersFromFrontend");
-        this.$store.dispatch("fetchMenu");
-        this.$store.commit("storeValue");
+        this.$store.dispatch("login", this.inputValue);
         this.$store.commit("toggleProfile");
       }
     },

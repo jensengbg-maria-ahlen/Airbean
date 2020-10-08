@@ -37,39 +37,65 @@
       "price": 39
     }
   ],
-  "orders": [
-    {
-      "items": [
-        {
-          "id": 1,
-          "title": "Bryggkaffe",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 39,
-          "quantity": 3
-        },
-        {
-          "id": 2,
-          "title": "Caffè Doppio",
-          "desc": "Bryggd på månadens bönor.",
-          "price": 49,
-          "quantity": 2
-        }
-      ],
-      "orderNr": "1CoY_Jz_a",
-      "totalCost": 215,
-      "est": 6,
-      "date": "2020-10-06"
-    }
-  ],
+  "orders": [],
   "users": [
     {
-      "user": [
+      "name": "Maria",
+      "email": "maria@mail.com",
+      "id": 1,
+      "orderHistory": [
         {
-          "name": "Maria",
-          "email": "maria@mail.com"
+          "items": [
+            {
+              "id": 1,
+              "title": "Bryggkaffe",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 39,
+              "quantity": 1
+            },
+            {
+              "id": 2,
+              "title": "Caffè Doppio",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 49,
+              "quantity": 1
+            },
+            {
+              "id": 5,
+              "title": "Kaffe Latte",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 54,
+              "quantity": 3
+            },
+            {
+              "id": 4,
+              "title": "Latte Macchiato",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "orderNr": "DCrdgSYc2",
+          "totalCost": 299,
+          "est": 6,
+          "date": "2020-10-08"
+        },
+        {
+          "items": [
+            {
+              "id": 3,
+              "title": "Cappuccino",
+              "desc": "Bryggd på månadens bönor.",
+              "price": 49,
+              "quantity": 2
+            }
+          ],
+          "orderNr": "rjcL5UH9g",
+          "totalCost": 98,
+          "est": 12,
+          "date": "2020-10-08"
         }
-      ],
-      "id": "5rkUvMcUN"
+      ]
     }
   ]
 }
